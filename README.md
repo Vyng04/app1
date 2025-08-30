@@ -41,4 +41,4 @@ Because super loop is sequential, increase the delay in printing task will add u
 
 **Q7. Do you agree or disagree: By using multitasking, we were able to achieve timing determinism for the LED blink. Why or why not?**
 
-I disagree, because using multitasking we are relying on the system task schedulin. Timing determinism is more about event driven or hardware interupt.
+I disagree, because using multitasking we are relying on the system task scheduling. Timing determinism is more about event driven or hardware interupt.
