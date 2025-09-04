@@ -18,28 +18,40 @@ My approach is healthcare. I wouldn't want my system to be verbose. For example 
 
 **Q4. Identify/Verify the period of each task; you can try to do this via the simulator, or perhaps by printing data to the console, or connect the outputs to the logic analyzer.**
 
-a. Describe how you measure the periods:
+**a. Describe how you measure the periods:**
+
 I used "pdTICKS_TO_MS (xTaskGetTickCount());" to capture the current_time, then use the formula "period=current-previous", the update the "previous_time= current_time". So in the next loop the current_time will have a new value and the previous_time will take on the old current_time value. Note: both current_time and previous_time is initialized at 0.
-b. LED blink task period:
+
+**b. LED blink task period:**
+
 Should be 500ms in total (250ms on, 250ms off). In my code I calculated the period of LED ON and LED OFF seperately so on the display console will show LED ON 250ms and LED 250ms.
-c. Print task period:
+
+**c. Print task period:**
+
 shoulb be 10000ms using the same logic.
 
 **Q5. Did our system tasks meet the timing requirements?**
 
 The timing requirement was met.
-How do you know?
-By prinyting out period and time stamp. 
-How did you verify it?
+
+**How do you know?**
+
+By printing out period and time stamp.
+
+**How did you verify it?**
+
 Compare with the counter on wokwi.
 
 **Q6. If the LED task had been written in a single-loop with the print (see baseline super-loop code), you might have seen the LED timing disturbed by printing (especially if printing took variable time).**
 
-Did you try running the code?
+**Did you try running the code?**
+
 Yes, I did.
-Can you cause the LED to miss it's timing requirements?
+
+**Can you cause the LED to miss it's timing requirements?
 If yes, how?
-If no, what did you try?
+If no, what did you try?**
+
 Because super loop is sequential, increase the delay in printing task will add up to the time until next LED blink.
 
 **Q7. Do you agree or disagree: By using multitasking, we were able to achieve timing determinism for the LED blink. Why or why not?**
